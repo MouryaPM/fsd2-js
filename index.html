@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // variable
+      // keywords : var , let ,const
+      // pascal casing: FirstLetterOfEach
+      //camel casing : firstLetterOfFirst
+      // _ :first_letter_of
+
+      var name = "Pooja Mourya";
+      var age = 28;
+      name = "Neha Mourya";
+
+      // console.log("This is for var:" + name, age);
+
+      let gender = "Female";
+      gender = "Male";
+      // console.log("This is for let:" + gender);
+
+      const favoriteColor = "Green";
+      //   favoriteColor = "Black";
+      // console.log("This is for const:", favoriteColor);
+      //
+
+      /*
+      Types:
+      1.string
+      2.number
+      3.boolean  - true / false
+      4.object
+      5.undefined
+      6.null
+      7.symbol
+      */
+
+      var a; // declaring a variable
+      a = 9; // assigining a value to variable
+      var b = 10; //decalare and assign
+
+      //   + - sum/Add
+      let sum = 10 + 10;
+      sum += 10;
+      // console.log("This is sum :", sum);
+
+      // -  subtract
+      let subtract = 10 - 5;
+      subtract -= 10;
+      // console.log("This is subtract", subtract);
+
+      // * -  multiply
+      let multiply = 10 * 5;
+      multiply *= 2;
+      // console.log("This is multiply", multiply);
+
+      //  / - divide
+      let divide = 10 / 5;
+      divide /= 2;
+      // console.log("This is divide", divide);
+
+      // ++ -  increment
+      let increment = 10;
+      increment = increment + 1;
+      increment++;
+      increment += 1;
+      // console.log("This is increment", increment);
+
+      // --    decrement
+      let decrement = 10;
+      decrement = decrement - 1;
+      decrement--;
+      decrement -= 1;
+      // console.log("This is decrement :", decrement);
+
+      //Escaping characters
+      //   'this is single'  "this is double"  `escape character/ template literal`
+
+      let line = 'this is the "quoted message" to display a line';
+      // console.log(line);
+
+      let fewLines = "FirstLine \n\tSecondLine \nnextline";
+      // console.log(fewLines);
+
+      /*
+      \'
+      \"
+      \\ - backslash
+      \n - newline
+      \t - tab -
+      \b
+      */
+
+      // concationation / concat
+
+      let conact = "First String" + " " + "second String";
+      // console.log(conact);
+
+      let newString = "First Line";
+
+      newString += " Second Line";
+
+      newString = newString + " Second Line";
+
+      // console.log(newString);
+
+      let userName = "Pooja";
+      let message = "Hi " + userName + ". Welcome to the app.";
+      // console.log(message);
+
+      //length String - Primitive
+      let lengthString = "This is a String";
+      //property - use length
+      //method : execute length()
+
+      let finalLength = lengthString.length;
+      // console.log(finalLength);
+
+      //bracket notation- []
+      //first character
+      // console.log(lengthString[0]);
+
+      //last character
+      // console.log(lengthString[finalLength - 1]);
+
+      lengthString[0] = "H"; //string immutable
+      lengthString = "this is new string"; //override value
+      // console.log(lengthString);
+
+      //Array
+      //1D / 1 dimensional / simple array
+      //  index     0        1       2       3        4
+      let colors = ["green", "black", "red", "slamon", "brown"];
+      // length       1         2      3       4          5
+      // console.log(colors);
+      let count = [1, 3, 5, 7, 8];
+
+      //access
+      // console.log(colors.length);
+      // console.log(colors[1]);
+      // colors[1] = "Blue";
+      // console.log(colors);
+
+      //2D/2 dimensional / netsed array
+      let multiColor = [
+        ["green", "black", "blue"],
+        ["gold", "black", "red", "white"],
+      ];
+      // console.log(multiColor);
+      // console.log(multiColor[0][2]);
+      // multiColor[0] = ["pink"];
+      // console.log(multiColor);
+
+      //new data : push
+      colors.push("Purple");
+
+      // console.log(colors);
+
+      multiColor.push(["purple", "pink"]);
+      //console.log(multiColor);
+
+      //pop - remove from last
+      count.pop();
+      // console.log(count);
+
+      //unshift - push . add to the start of array
+
+      colors.unshift("gray");
+      //  console.log(colors);
+      //shift - pop . remove from the start of array
+
+      count.shift();
+      //console.log(count);
+
+      //functions- DRY
+      //keyword: function
+
+      function printFunction() {
+        console.log("This is a function");
+      }
+
+      // printFunction();
+
+      //sum
+      function FinalSum(firstNumber, secondNumber) {
+        //console.log(firstNumber + secondNumber);
+      }
+      // FinalSum(1, 2);
+      // FinalSum(11, 2);
+      // FinalSum(21, 2);
+      // FinalSum(10, 2);
+
+      //scope -
+      let gloablVariable = 10;
+      function ScopeFunction() {
+        gloablVariable += 10;
+        let localVariable = 5;
+        //console.log("Global:", gloablVariable);
+        //console.log("Local:", localVariable);
+      }
+      ScopeFunction();
+      //console.log("Out of function Global", gloablVariable);
+      // console.log("Out of function Local", localVariable);
+
+      var clothes = "shirt";
+      function outfit() {
+        var clothes = "skirt";
+        return clothes;
+      }
+      console.log("console", clothes);
+      var data = outfit();
+      //console.log(data);
+
+      //example
+      function createArray(userarray, item) {
+        userarray.push(item);
+        return userarray;
+      }
+      let initialArray = [1, 2, 3];
+      // console.log("Before", initialArray);
+      //console.log(createArray(initialArray, 4));
+      //console.log(createArray(initialArray, 5));
+
+      // Conditions : if else - true or false
+
+      function trueOrFalse(isItTrue) {
+        if (isItTrue) return "This is true value";
+        return "This is false value";
+      }
+      console.log(trueOrFalse(true));
+
+      function equalTo15(number) {
+        if (number != 15) return "number is 15";
+        return "False";
+      }
+
+      function equalTo10(number) {
+        return number == 10;
+      }
+      function validateNumber(number) {
+        if (number > 100 && number < 150) {
+          number = number + 100;
+          return number;
+        } else {
+          return number;
+        }
+
+        // if(number >100){
+        //   number=number+200
+        //   if(number <500)
+        //   {
+        //     return
+        //   }
+        //   else{
+
+        //   }
+        // }
+        // else{
+
+        // }
+        if (number > 0 && number < 20) {
+          return "Hi";
+        } else if (number > 20 && number < 30) {
+          return "hello";
+        } else {
+          return "Bye";
+        }
+      }
+
+      // switch
+      function checkCase(value) {
+        let answer = "";
+        switch (value) {
+          case 1:
+            answer = "alpha";
+            break;
+          case 2:
+            answer = "beta";
+            break;
+          case 3:
+            answer = "gamma";
+            break;
+          default:
+            answer = "nothing";
+            break;
+        }
+        return answer;
+      }
+
+      function checkNewCase(value) {
+        let answer = "";
+        switch (value) {
+          case 1:
+          case 2:
+          case 3:
+            answer = "Alpha";
+            break;
+          case 4:
+            answer = "beta";
+            break;
+          default:
+            answer = "nothing";
+            break;
+        }
+        return answer;
+      }
+      //console.log(checkCase(2));
+
+      //objects
+      let user = {
+        name: "Jess",
+        lastname: "smith",
+        age: 70,
+        blood_group: "b+",
+        gender: "Female",
+      };
+      //dot notation
+      //console.log(user.gender);
+
+      let finalUser = {
+        "users name": "Pooja",
+        "users lastname": "Mourya",
+        "users gender": "Female",
+        1: 90,
+      };
+      //bracket notation
+      //console.log(finalUser[1]);
+
+      // sort by : name , lastname ,gender
+      let userSearch = "users gender";
+
+      //console.log(finalUser[userSearch]);
+
+      //update
+      //console.log("Initial User:", user);
+      user.gender = "Male";
+      //add
+      user.address = "3rd street";
+
+      //delete
+      delete user.gender;
+      // console.log("Final User:", user);
+      //coversion
+
+      function findCase(value) {
+        let answer = "";
+        let lookupTable = {
+          1: "alpha",
+          2: "beta",
+          3: "gamma",
+        };
+        answer = lookupTable[value];
+        return answer;
+      }
+
+      //
+      var gameObject = {
+        gift: "Car",
+        paper: "White",
+        stone: "heavy",
+      };
+      function checkProperty(prop) {
+        return gameObject.hasOwnProperty(prop);
+      }
+
+      //complex
+      let songs = [
+        {
+          title: "abc",
+          artist: "Ed",
+          release_year: "2022",
+          stars: 5,
+          formats: ["CDS", "digital", "Vinels"],
+          description: {
+            first: {
+              pooja: "test description",
+              priya: "test",
+            },
+            second: {
+              neha: "test description",
+              ruhi: "test",
+            },
+          },
+        },
+        {
+          title: "abc",
+          artist: "Ed",
+          release_year: "2022",
+          stars: 5,
+          formats: ["CDS", "digital", "Vinels"],
+        },
+      ];
+      // console.log(songs[0].description.first.pooja);
+      // console.log(songs[0].formats[2]);
+
+      //ternary operators :
+      // condition ? statement if true : statment if false
+
+      function checkGreater(a, b) {
+        // if(a > b){
+
+        // }
+        // else
+        // {
+
+        // }
+
+        return a > b ? "A is greater" : "B is greater";
+      }
+
+      function checkSign(value) {
+        return value > 0 ? "Positive" : value < 0 ? "Negative" : "Zero";
+      }
+
+      function mathCalculation() {
+        let defaultValues = {
+          pi: "3.14",
+        };
+        Object.freeze(defaultValues);
+        try {
+          defaultValues.pi = "600";
+        } catch (err) {
+          console.log(err);
+        }
+        return defaultValues.pi;
+      }
+
+      let contacts = [
+        {
+          firstname: "Pooja",
+          lastname: "Mourya",
+          number: "11111111",
+          likes: ["green", "pizza", "pasta"],
+        },
+        {
+          firtsname: "Ruhi",
+          lastname: "Mourya",
+          number: "7897897",
+          likes: ["toys", "park"],
+        },
+      ];
+
+      function findContact(name, prop) {
+        for (let i = 0; i < contacts.length; i++) {
+          if (name == contacts[i].firstname) {
+            if (contacts[i][prop]) return contacts[i][prop];
+            return "No such prop";
+          }
+        }
+        return "No such contact";
+      }
+
+      //Arrow function
+
+      let dob = () => {
+        return new Date();
+      };
+
+      let shortDob = (arg1, arg2) => new Date();
+
+      // rest operator :  ...
+      const sumNumber = (...args) => {
+        // const args = [x, y, z];
+        let sum = 0;
+        for (let j = 0; j < args.length; j++) {
+          sum += args[j];
+        }
+        return sum;
+      };
+      console.log(sumNumber(1, 2, 3, 4, 5, -5));
+
+      //spread operator:  ...
+      let copyArray;
+      let finalArray = ["Monday", "Sunday", "Friday"];
+      function CopyArray() {
+        copyArray = [...finalArray];
+      }
+      CopyArray();
+      console.log(copyArray);
+
+      //destructuring
+      let element = { x: 1, y: 5, z: 9 };
+      var firstValue = element.x;
+      var secondValue = element.y;
+      var thridValue = element.z;
+
+      let { x: first, y: second, z: third } = element;
+      let { x: x, y: y, z: z } = element;
+      console.log(third);
+
+      // ``
+      let welcomeMessage = "Hi User.";
+      welcomeMessage += " Welcome to our site";
+
+      let stringMessage = `Hi ${contacts[0].likes}. ${2 + 2}
+     Welcome to our site.
+     Hope you are doing well
+     `;
+      console.log(stringMessage);
+    </script>
+  </body>
+</html>
+<!-- 
+1.create an array of objects
+object =  firstname, lastname , number , likes:[]
+function : firstname, any property
+check if property exists if yes return value else return no property
+
+
+ -->
